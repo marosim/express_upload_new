@@ -3,12 +3,13 @@ function start() {
 
   function handleClick(e) {
     e.preventDefault();
-    console.log('click ', e.target.sampleFile.files[0])
+    
 
     const formData = new FormData();
-    formData.append('files', e.target.sampleFile.files[0]);
+    formData.append('userfile', document.getElementById('userfile').files[0]);
+    formData.append('username', document.getElementById('username').value);
 
-    fetch(`http://localhost:8000/upload`,
+    fetch(`/upload`,
       {
         method: 'post',
         body: formData

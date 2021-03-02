@@ -19,13 +19,14 @@ app.post('/upload', function (req, res) {
     return res.status(400).send('No files were uploaded.');
   }
 
-  console.log('req.files >>>', req.files); // eslint-disable-line
+  console.log('req.files >>>', req.userfile, req.body.username); // eslint-disable-line
+  //itt tartunk!
 
   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-  sampleFile = req.files.files;
+  sampleFile = req.files.userfile;
   uploadPath = __dirname + '/../frontend/upload/' + sampleFile.name;
 
-  console.log(sampleFile, uploadPath)
+  //console.log(sampleFile, uploadPath)
 
   // Use the mv() method to place the file somewhere on your server
   sampleFile.mv(uploadPath, function (err) {

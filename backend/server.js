@@ -19,8 +19,8 @@ app.post('/upload', function (req, res) {
     return res.status(400).send('No files were uploaded.');
   }
 
-  console.log('req.files >>>', req.userfile, req.body.username); // eslint-disable-line
-  //itt tartunk!
+  console.log('req.files >>>', req.files.userfile, req.body.username); // eslint-disable-line
+ 
 
   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
   sampleFile = req.files.userfile;

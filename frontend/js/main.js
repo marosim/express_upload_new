@@ -3,19 +3,17 @@ function start() {
 
   function handleClick(e) {
     e.preventDefault();
-    
+
 
     const formData = new FormData();
     formData.append('userfile', document.getElementById('userfile').files[0]);
     formData.append('username', document.getElementById('username').value);
+    formData.append('xxx', "ccccccccccc");
     console.log([...formData]);
 
     fetch(`/upload`,
       {
         method: 'post',
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        },
         body: formData
       })
       .then((response) => {

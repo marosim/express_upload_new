@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #969ac2;
+}
+
+.App {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-49%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+input#userfile {
+  outline: none;
+}
+
+input#username {
+  padding: 8px;
+  width: 100%;
+}
+
+button {
+  border: none;
+  border-radius: 2em;
+  padding: 10px;
+  align-self: center;
+  outline: none;
+}
+
+button:hover {
+  background-color: #8ac6d1;
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import './style.css';
 
 function App() {
   const [upload, setUpload] = useState(false);

@@ -11,16 +11,11 @@ app.use(fileUpload());
 app.post('/upload', function (req, res) {
   let sampleFile;
   let uploadPath;
-  // console.log(req.files);
-  // console.log(req);
-  // console.log(req.files);
-  // console.log(req.method);
+
   console.log('req.files >>>', req.files.userfile.name, req.body.username); // eslint-disable-line
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }
-
-
 
   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
   sampleFile = req.files.userfile;

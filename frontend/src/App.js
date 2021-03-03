@@ -16,6 +16,10 @@ function App() {
       const formData = new FormData();
       formData.append('userfile', document.getElementById('userfile').files[0]);
       formData.append('username', document.getElementById('username').value);
+      formData.append('useremail', document.getElementById('useremail').value);
+      formData.append('useraddress', document.getElementById('useraddress').value);
+      formData.append('usercity', document.getElementById('usercity').value);
+      formData.append('userpostcode', document.getElementById('userpostcode').value);
       console.log([...formData]);
       fetch(`/upload`,
         {
@@ -35,8 +39,12 @@ function App() {
 
   return (
     <div className="App">
-      <input type="file" id="userfile" />
-      <input type="text" id='username' />
+      <input type="text" className="toJson" id='username' placeholder="Name"/>
+      <input type="email" className="toJson" id='useremail' placeholder="Email" />
+      <input type="text" className="toJson" id='usercity' placeholder="City"/>
+      <input type="number" className="toJson" id='userpostcode' placeholder="Postcode" />
+      <input type="text" className="toJson" id='useraddress' placeholder="Address"/>
+      <input type="file" id='userfile' />
       <button value='Upload!' onClick={handleClickUpload} >Upload</button>
     </div>
   );

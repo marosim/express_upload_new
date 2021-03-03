@@ -4,40 +4,70 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  color: #aabbe6;
 }
 
 body {
-  background: #969ac2;
+  background: #252e52;
 }
 
 .App {
   position: fixed;
   top: 40%;
   left: 50%;
-  transform: translate(-49%, -50%);
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+  margin: 20px;
+  color: #b6c4e5;
 }
 
-input#userfile {
-  outline: none;
-}
-
-input#username {
-  padding: 8px;
+input {
+  padding: 10px;
   width: 100%;
+  background: transparent;
+  border: 1px solid #171d33;
+  border-radius: 0.3em;
+}
+
+input::placeholder {
+  color: #6A7090;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #aabbe6 !important;
+}
+
+textarea:focus, input:focus{
+ outline: none;
+ box-shadow: 0 0 0 1px #F572B0;
 }
 
 button {
-  border: none;
-  border-radius: 2em;
-  padding: 10px;
-  align-self: center;
+  background-image: linear-gradient(to right, #f580b7 0%, #d33d7b  51%, #ff6e7f  100%)}
+
+button {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
   outline: none;
+  border: none;
+  border-radius: 0.3em;
+  display: block;
+  align-self: center;
 }
 
 button:hover {
-  background-color: #8ac6d1;
+  background-position: right center;
+  cursor: pointer;
 }

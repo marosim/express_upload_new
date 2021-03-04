@@ -14,19 +14,29 @@ function App() {
       console.log("start upload");
 
       const formData = new FormData();
-      formData.append('userfile', document.getElementById('userfile').files[0]);
-      formData.append('username', document.getElementById('username').value);
-      formData.append('useremail', document.getElementById('useremail').value);
-      formData.append('useraddress', document.getElementById('useraddress').value);
-      formData.append('usercity', document.getElementById('usercity').value);
-      formData.append('userpostcode', document.getElementById('userpostcode').value);
-      console.log([...formData]);
+       formData.append('userfile', document.getElementById('userfile').files[0]);
+      // formData.append('username', document.getElementById('username').value);
+      // formData.append('useremail', document.getElementById('useremail').value);
+      // formData.append('useraddress', document.getElementById('useraddress').value);
+      // formData.append('usercity', document.getElementById('usercity').value);
+      // formData.append('userpostcode', document.getElementById('userpostcode').value);
+
+
+      let toJson = {};
+      let ls = document.querySelectorAll(".toJson");
+      
+      for (const l of ls) {
+        toJson[`${l.getAttribute('id')}`] = l.value;
+      }
+      console.log(toJson);
+      formData.append('userdata', JSON.stringify(toJson));
+      
       fetch(`/upload`,
         {
           method: 'post',
           body: formData
         })
-        .then((response) => response.text())
+        .then((response) => response.json())
         .then((data) => {
           console.log("data: ", data);
         })

@@ -1,0 +1,1 @@
+{"username":"jolan","useremail":"andrea@gmail.com","usercity":"budapest","userpostcode":"2546","useraddress":"sdfgf","uploadPath":"C:\\projects\\express_js_file_upload\\backend/../frontend/public/upload/enter-rick-morty-contest-02.jpg"}
